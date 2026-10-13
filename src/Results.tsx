@@ -152,13 +152,13 @@ export function Results({
                     />
                     <Tooltip
                       formatter={(v) => `${Number(v).toFixed(1)}%`}
-                      cursor={{ fill: "#f3f6fa" }}
+                      cursor={{ fill: "#eff6ff" }}
                     />
                     <Bar
                       dataKey="accuracy"
                       name="Accuracy"
-                      fill="#4469a4"
-                      radius={[0, 3, 3, 0]}
+                      fill="#2563eb"
+                      radius={[0, 5, 5, 0]}
                       isAnimationActive={false}
                     />
                   </BarChart>
@@ -234,7 +234,7 @@ export function Results({
           </div>
         </>
       ) : (
-        <section className="review-panel">
+        <section className="review-panel" key="review">
           <div className="review-toolbar">
             <div
               className="filter-buttons"
@@ -300,7 +300,7 @@ export function Results({
                   Next <ArrowRight size={16} />
                 </button>
               </div>
-              <div className="review-body">
+              <div className="review-body" key={row.q.id}>
                 <div className="question-label">
                   <span>
                     Question {row.index + 1}{" "}

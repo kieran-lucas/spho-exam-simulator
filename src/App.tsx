@@ -328,6 +328,23 @@ export default function App() {
   const q = exam && attempt ? exam.questions[attempt.currentQuestion] : null;
   const response = attempt?.responses.find((r) => r.questionId === q?.id);
   useEffect(() => {
+    if (
+      page !== "exam" ||
+      !q ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    )
+      return;
+    const content = document.querySelector(".question-scroll");
+    const animation = content?.animate(
+      [
+        { opacity: 0.45, transform: "translateY(7px)" },
+        { opacity: 1, transform: "translateY(0)" },
+      ],
+      { duration: 190, easing: "cubic-bezier(0.22, 1, 0.36, 1)" },
+    );
+    return () => animation?.cancel();
+  }, [page, q?.id]);
+  useEffect(() => {
     function key(e: KeyboardEvent) {
       if (
         e.altKey ||
@@ -397,7 +414,7 @@ export default function App() {
         </div>
         <div className="header-right">
           <span className="offline">
-            <span /> Offline · Local storage
+            <ShieldCheck size={14} /> Offline · Local storage
           </span>
           {page !== "exam" && (
             <button
@@ -442,35 +459,77 @@ export default function App() {
       )}
       {page === "library" && (
         <main className="library">
-          <div className="page-heading">
+          <div className="page-heading library-heading">
             <div>
-              <p className="eyebrow">YOUR WORKSPACE</p>
+              <p className="eyebrow">
+                <span className="heading-dot" /> YOUR WORKSPACE
+              </p>
               <h1>Examination library</h1>
               <p className="muted">
                 A focused space for deliberate physics practice.
               </p>
+              <div className="session-label">
+                <Clock3 size={14} /> 150-minute standard session <span>·</span>{" "}
+                Overload practice
+              </div>
             </div>
-            <button className="primary" disabled={!!busy} onClick={importZip}>
+            <button
+              className="primary import-button"
+              disabled={!!busy}
+              onClick={importZip}
+            >
               <FolderInput size={18} /> Import examination ZIP
             </button>
           </div>
           <div className="library-strip">
-            <span>
-              <BookOpen size={18} />
-              {library.length} examinations
-            </span>
-            <span>
-              <Clock3 size={18} />
-              Standard session · 150 minutes
-            </span>
-            <span>
-              <ShieldCheck size={18} />
-              Progress saved automatically
-            </span>
+            <div className="library-stat">
+              <span className="stat-icon">
+                <BookOpen size={20} />
+              </span>
+              <div>
+                <strong>{library.length}</strong>
+                <span>Examinations</span>
+              </div>
+            </div>
+            <div className="library-stat">
+              <span className="stat-icon">
+                <CheckCircle2 size={20} />
+              </span>
+              <div>
+                <strong>
+                  {library.reduce(
+                    (total, item) =>
+                      total +
+                      item.attempts.filter((a) => a.status === "submitted")
+                        .length,
+                    0,
+                  )}
+                </strong>
+                <span>Completed attempts</span>
+              </div>
+            </div>
+            <div className="library-stat">
+              <span className="stat-icon">
+                <Clock3 size={20} />
+              </span>
+              <div>
+                <strong>
+                  {library.reduce(
+                    (total, item) =>
+                      total +
+                      item.attempts.filter((a) => a.status === "active").length,
+                    0,
+                  )}
+                </strong>
+                <span>In progress · autosaved</span>
+              </div>
+            </div>
           </div>
           {!library.length ? (
             <div className="empty">
-              <BookOpen size={36} />
+              <span className="empty-icon">
+                <BookOpen size={32} />
+              </span>
               <h2>Your next examination starts here</h2>
               <p>
                 Import a self-contained <code>spho-exam/1.0</code> ZIP package.
@@ -486,7 +545,7 @@ export default function App() {
             </div>
           ) : (
             <div className="exam-list">
-              {library.map((item) => {
+              {library.map((item, index) => {
                 const m = item.manifest;
                 const completed = item.attempts.filter(
                   (a) => a.status === "submitted",
@@ -496,7 +555,11 @@ export default function App() {
                   ? Math.max(...completed.map((a) => a.score ?? 0))
                   : null;
                 return (
-                  <article className="exam-card" key={m.examId}>
+                  <article
+                    className="exam-card"
+                    key={m.examId}
+                    style={{ animationDelay: `${Math.min(index, 6) * 45}ms` }}
+                  >
                     <div className="exam-card-main">
                       <span className="exam-symbol">
                         <FileText size={24} />

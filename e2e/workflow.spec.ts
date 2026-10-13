@@ -196,7 +196,20 @@ test("invalid math and unsafe SVG never leave a partial library entry; duplicate
 test("all ten rendering cases, image zoom, keyboard safety and full-size layout screenshots", async ({
   page,
 }, testInfo) => {
+  await page.goto("/");
+  await expect(
+    page.getByRole("heading", { name: "Examination library" }),
+  ).toBeVisible();
+  await page.evaluate(() => document.fonts.ready);
+  await page.screenshot({
+    path: testInfo.outputPath("blue-library-empty.png"),
+    animations: "disabled",
+  });
   await importSample(page);
+  await page.screenshot({
+    path: testInfo.outputPath("blue-library-imported.png"),
+    animations: "disabled",
+  });
   await page.getByRole("button", { name: "Start examination" }).click();
   for (let i = 1; i <= 10; i++) {
     await page
@@ -210,6 +223,7 @@ test("all ten rendering cases, image zoom, keyboard safety and full-size layout 
     for (const image of await page.locator(".question-scroll img").all())
       await expect(image).toHaveJSProperty("complete", true);
     await page.screenshot({
+      animations: "disabled",
       path: testInfo.outputPath(`case-${String(i).padStart(2, "0")}.png`),
     });
   }
@@ -229,11 +243,23 @@ test("all ten rendering cases, image zoom, keyboard safety and full-size layout 
     page.getByText("Question 6", { exact: false }).first(),
   ).toBeVisible();
   await page.getByRole("button", { name: "Submit examination" }).click();
+  await page.screenshot({
+    path: testInfo.outputPath("blue-submission.png"),
+    animations: "disabled",
+  });
   await page.getByRole("button", { name: "Confirm submission" }).click();
+  await expect(page.getByTestId("score")).toBeVisible();
+  await page.screenshot({
+    path: testInfo.outputPath("blue-results.png"),
+    animations: "disabled",
+  });
   await page.getByRole("button", { name: "Question review" }).click();
   await page.getByLabel("Review question").selectOption("Q010");
   await expect(page.locator(".review-body table")).toBeVisible();
-  await page.screenshot({ path: testInfo.outputPath("long-explanation.png") });
+  await page.screenshot({
+    path: testInfo.outputPath("long-explanation.png"),
+    animations: "disabled",
+  });
   await page.getByRole("button", { name: "Back to library" }).click();
   bridge.fixture = resolve("fixtures/SPHO_SYNTHETIC_100.zip");
   await page.getByRole("button", { name: "Import examination ZIP" }).click();
@@ -260,8 +286,54 @@ test("all ten rendering cases, image zoom, keyboard safety and full-size layout 
         () => document.documentElement.scrollWidth <= innerWidth,
       ),
     ).toBeTruthy();
-    await page.screenshot({ path: testInfo.outputPath(`stress-${width}.png`) });
+    await page.screenshot({
+      path: testInfo.outputPath(`stress-${width}.png`),
+      animations: "disabled",
+    });
   }
+});
+
+test("reduced motion preserves question focus, notes, dialog focus restoration and navigation", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await importSample(page);
+  await page.getByRole("button", { name: "Start examination" }).click();
+  await page.getByRole("button", { name: "Next", exact: true }).click();
+  await expect(page.locator("#question-start")).toBeFocused();
+  await expect(page.locator("#question-start")).toContainText("Question 2");
+  const choicesHeight = (await page.locator(".choices").boundingBox())!.height;
+  await page.getByRole("button", { name: "Choose A", exact: true }).click();
+  await expect(
+    page.getByRole("button", { name: "Choose A", exact: true }),
+  ).toHaveAttribute("aria-pressed", "true");
+  expect(
+    Math.abs(
+      (await page.locator(".choices").boundingBox())!.height - choicesHeight,
+    ),
+  ).toBeLessThan(0.5);
+  expect(
+    await page.evaluate(
+      () =>
+        document.getAnimations().filter((a) => a.playState === "running")
+          .length,
+    ),
+  ).toBe(0);
+  await page
+    .getByLabel("Personal note")
+    .fill("Ghi chú không mất khi chuyển câu.");
+  await expect(page.getByText("All changes saved")).toBeVisible();
+  await page.getByRole("button", { name: "Next", exact: true }).click();
+  await page.getByRole("button", { name: "Previous", exact: true }).click();
+  await expect(page.getByLabel("Personal note")).toHaveValue(
+    "Ghi chú không mất khi chuyển câu.",
+  );
+  const submit = page.getByRole("button", { name: "Submit examination" });
+  await submit.click();
+  await expect(page.getByRole("dialog")).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(page.getByRole("dialog")).toHaveCount(0);
+  await expect(submit).toBeFocused();
 });
 test("normal operation makes no external network requests", async ({
   page,
@@ -326,7 +398,10 @@ test("scientific content stays readable at common display scale factors", async 
         () => document.documentElement.scrollWidth <= innerWidth,
       ),
     ).toBeTruthy();
-    await page.screenshot({ path: testInfo.outputPath(`scale-${factor}.png`) });
+    await page.screenshot({
+      path: testInfo.outputPath(`scale-${factor}.png`),
+      animations: "disabled",
+    });
     await context.close();
   }
 });

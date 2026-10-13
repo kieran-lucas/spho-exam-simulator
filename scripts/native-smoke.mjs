@@ -94,7 +94,15 @@ try {
     }),
   ).toBeVisible();
   await page.getByRole("button", { name: "Start examination" }).click();
+  const choicesHeight = (await page.locator(".choices").boundingBox()).height;
   await page.getByRole("button", { name: "Choose B", exact: true }).click();
+  await expect
+    .poll(async () =>
+      Math.abs(
+        (await page.locator(".choices").boundingBox()).height - choicesHeight,
+      ),
+    )
+    .toBeLessThan(0.5);
   await page.keyboard.press("f");
   await page
     .getByLabel("Personal note")

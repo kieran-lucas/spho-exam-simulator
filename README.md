@@ -2,6 +2,12 @@
 
 Offline Windows 11 physics examination software built with Tauri 2, Rust, React, TypeScript, Vite, Tailwind CSS, SQLite, React Markdown, KaTeX, and Recharts. Light mode; Overload Mode only. No accounts, telemetry, remote content, or cloud storage.
 
+The interface uses a pale blue workspace, cobalt accents, white reading surfaces, and locally bundled academic typography. Library statistics summarize imported exams and attempt history. Short transitions cover screen entry, question navigation, answer selection, progress, and dialogs. Windows' reduced-motion preference disables decorative animation, including question transitions; timer and autosave behavior remain independent of animation.
+
+![Blue examination library with the rendering validation fixture imported](docs/screenshots/library-blue.png)
+
+[View the exam room with a scientific diagram](docs/screenshots/exam-blue.png). Screenshots use the demonstration package, not a genuine preparation exam.
+
 ## Install and use
 
 Run the NSIS installer under `src-tauri/target/release/bundle/nsis/`. The standalone executable is `src-tauri/target/release/spho-exam-simulator.exe`. Windows WebView2 is required; the installer embeds its bootstrapper. Windows 11 normally includes the runtime. Installing on a machine without WebView2 may require internet to install that prerequisite; normal application use is offline.
