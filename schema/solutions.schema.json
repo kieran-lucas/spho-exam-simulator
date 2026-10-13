@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "minItems": 1,
+  "maxItems": 500,
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "questionId": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_-]{1,100}$"
+      },
+      "correctChoice": {
+        "type": "string",
+        "enum": ["A", "B", "C", "D"]
+      },
+      "explanation": {
+        "minItems": 1,
+        "maxItems": 200,
+        "type": "array",
+        "items": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "markdown"
+                },
+                "content": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100000
+                }
+              },
+              "required": ["type", "content"],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "image"
+                },
+                "src": {
+                  "type": "string"
+                },
+                "alt": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "caption": {
+                  "default": "",
+                  "type": "string"
+                }
+              },
+              "required": ["type", "src", "alt", "caption"],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "shortcut": {
+        "minItems": 1,
+        "maxItems": 200,
+        "type": "array",
+        "items": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "markdown"
+                },
+                "content": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100000
+                }
+              },
+              "required": ["type", "content"],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "image"
+                },
+                "src": {
+                  "type": "string"
+                },
+                "alt": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "caption": {
+                  "default": "",
+                  "type": "string"
+                }
+              },
+              "required": ["type", "src", "alt", "caption"],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "pitfalls": {
+        "minItems": 1,
+        "maxItems": 200,
+        "type": "array",
+        "items": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "markdown"
+                },
+                "content": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100000
+                }
+              },
+              "required": ["type", "content"],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "image"
+                },
+                "src": {
+                  "type": "string"
+                },
+                "alt": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "caption": {
+                  "default": "",
+                  "type": "string"
+                }
+              },
+              "required": ["type", "src", "alt", "caption"],
+              "additionalProperties": false
+            }
+          ]
+        }
+      }
+    },
+    "required": ["questionId", "correctChoice", "explanation"],
+    "additionalProperties": false
+  },
+  "$id": "https://spho.local/schema/solutions.schema.json",
+  "title": "spho-exam/1.0 solutions"
+}

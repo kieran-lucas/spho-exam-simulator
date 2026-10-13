@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "spho-exam/1.0",
+  "examId": "spho-sample-validation",
+  "title": "SPhO — Scientific Rendering Validation",
+  "description": "10 demonstration questions for import and rendering QA. Not a full practice exam.",
+  "durationSeconds": 9000,
+  "questionCount": 10,
+  "sections": [
+    {
+      "id": "physics-1",
+      "title": "Vật lý 1",
+      "questionCount": 5
+    },
+    {
+      "id": "physics-2",
+      "title": "Vật lý 2",
+      "questionCount": 5
+    }
+  ]
+}

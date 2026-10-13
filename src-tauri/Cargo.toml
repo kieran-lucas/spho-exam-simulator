@@ -1,0 +1,50 @@
+[package]
+name = "spho-exam-simulator"
+version = "1.0.0"
+description = "Offline academic physics examination simulator"
+authors = ["SPhO Exam Simulator contributors"]
+edition = "2021"
+default-run = "spho-exam-simulator"
+
+[lib]
+name = "spho_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[features]
+qa = []
+
+[[bin]]
+name = "spho-qa"
+path = "src/bin/qa.rs"
+required-features = ["qa"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-single-instance = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rusqlite = { version = "0.38", features = ["bundled"] }
+zip = { version = "6", default-features = false, features = ["deflate"] }
+sha2 = "0.10"
+base64 = "0.22"
+roxmltree = "0.21"
+image = { version = "0.25", default-features = false, features = ["png", "webp"] }
+uuid = { version = "1", features = ["v4"] }
+chrono = { version = "0.4", features = ["serde"] }
+pulldown-cmark = "0.13"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = ["Win32_System_SystemInformation"] }
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "SPhO Exam Simulator",
+  "version": "1.0.0",
+  "identifier": "org.spho.examsimulator",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "SPhO Exam Simulator",
+        "width": 1440,
+        "height": 900,
+        "minWidth": 1024,
+        "minHeight": 650,
+        "backgroundColor": "#f7f8fa"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' blob: data:; connect-src ipc: http://ipc.localhost; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'",
+      "devCsp": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' blob: data:; connect-src ipc: http://ipc.localhost http://127.0.0.1:1420 ws://127.0.0.1:1420; object-src 'none'; frame-src 'none'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "shortDescription": "Offline physics examination practice",
+    "category": "Education",
+    "icon": ["icons/icon.ico", "icons/icon.png"],
+    "windows": {
+      "nsis": {
+        "displayLanguageSelector": false,
+        "installMode": "currentUser"
+      },
+      "webviewInstallMode": { "type": "embedBootstrapper" }
+    }
+  }
+}

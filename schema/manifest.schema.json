@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "spho-exam/1.0"
+    },
+    "examId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,100}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string"
+    },
+    "durationSeconds": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 86400
+    },
+    "questionCount": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 500
+    },
+    "sections": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,100}$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "questionCount": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 500
+          }
+        },
+        "required": ["id", "title", "questionCount"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "examId",
+    "title",
+    "description",
+    "durationSeconds",
+    "questionCount",
+    "sections"
+  ],
+  "additionalProperties": false,
+  "$id": "https://spho.local/schema/manifest.schema.json",
+  "title": "spho-exam/1.0 manifest"
+}

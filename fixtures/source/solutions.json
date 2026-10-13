@@ -1,0 +1,228 @@
+[
+  {
+    "questionId": "Q001",
+    "correctChoice": "B",
+    "explanation": [
+      {
+        "type": "markdown",
+        "content": "$W_\\text{đ}=\\frac12 mv^2=\\frac12\\cdot2\\cdot3^2=9\\,\\mathrm{J}$."
+      }
+    ],
+    "shortcut": [
+      {
+        "type": "markdown",
+        "content": "Bình phương vận tốc trước khi nhân."
+      }
+    ],
+    "pitfalls": [
+      {
+        "type": "markdown",
+        "content": "Không nhầm động năng với động lượng $p=mv$."
+      }
+    ]
+  },
+  {
+    "questionId": "Q002",
+    "correctChoice": "C",
+    "explanation": [
+      {
+        "type": "markdown",
+        "content": "Khi ngắt nguồn, $Q$ không đổi. $C$ giảm một nửa nên $U$ tăng gấp đôi."
+      }
+    ],
+    "shortcut": [
+      {
+        "type": "markdown",
+        "content": "Ngắt nguồn: $Q$ không đổi."
+      }
+    ],
+    "pitfalls": [
+      {
+        "type": "markdown",
+        "content": "Nếu tụ vẫn nối nguồn thì $V$ không đổi, kết luận sẽ khác."
+      }
+    ]
+  },
+  {
+    "questionId": "Q003",
+    "correctChoice": "B",
+    "explanation": [
+      {
+        "type": "markdown",
+        "content": "Định luật Gauss cho $\\Phi_E=Q_\\mathrm{enc}/\\varepsilon_0$, không phụ thuộc hình dạng mặt kín."
+      }
+    ],
+    "shortcut": [
+      {
+        "type": "markdown",
+        "content": "Kiểm tra điều kiện của mô hình trước khi thay số."
+      }
+    ],
+    "pitfalls": [
+      {
+        "type": "markdown",
+        "content": "Giữ nhất quán đơn vị SI và dấu của các đại lượng."
+      }
+    ]
+  },
+  {
+    "questionId": "Q004",
+    "correctChoice": "A",
+    "explanation": [
+      {
+        "type": "markdown",
+        "content": "Mỗi điện tích ở một đỉnh có điện tích đối xứng qua tâm ở đỉnh đối diện. Hai vectơ điện trường tương ứng triệt tiêu. Tổng bằng không."
+      }
+    ],
+    "shortcut": [
+      {
+        "type": "markdown",
+        "content": "Ghép bốn cặp đỉnh đối diện."
+      }
+    ],
+    "pitfalls": [
+      {
+        "type": "markdown",
+        "content": "Điện thế ở tâm không bằng không nếu mọi điện tích cùng dấu; điện trường là vectơ."
+      }
+    ]
+  },
+  {
+    "questionId": "Q005",
+    "correctChoice": "C",
+    "explanation": [
+      {
+        "type": "markdown",
+        "content": "$R(1,0)^T=(0,1)^T$. Hàm từng đoạn được thêm để kiểm tra cách hiển thị cases, không tham gia phép quay."
+      }
+    ],
+    "shortcut": [
+      {
+        "type": "markdown",
+        "content": "Kiểm tra điều kiện của mô hình trước khi thay số."
+      }
+    ],
+    "pitfalls": [
+      {
+        "type": "markdown",
+        "content": "Giữ nhất quán đơn vị SI và dấu của các đại lượng."
+      }
+    ]
+  },
+  {
+    "questionId": "Q006",
+    "correctChoice": "A",
+    "explanation": [
+      {
+        "type": "markdown",
+        "content": "$R_\\mathrm{eq}=2+4=6\\,\\Omega$. Theo định luật Ôm: $I=12/6=2\\,\\mathrm{A}$."
+      },
+      {
+        "type": "image",
+        "src": "assets/circuit.svg",
+        "alt": "Mạch nối tiếp trong lời giải",
+        "caption": ""
+      }
+    ],
+    "shortcut": [
+      {
+        "type": "markdown",
+        "content": "Kiểm tra điều kiện của mô hình trước khi thay số."
+      }
+    ],
+    "pitfalls": [
+      {
+        "type": "markdown",
+        "content": "Giữ nhất quán đơn vị SI và dấu của các đại lượng."
+      }
+    ]
+  },
+  {
+    "questionId": "Q007",
+    "correctChoice": "B",
+    "explanation": [
+      {
+        "type": "markdown",
+        "content": "Độ dời là diện tích dưới đồ thị:\n\n$$s=\\frac12\\cdot2\\cdot4+2\\cdot4=12\\,\\mathrm{m}.$$"
+      }
+    ],
+    "shortcut": [
+      {
+        "type": "markdown",
+        "content": "Tam giác cộng hình chữ nhật."
+      }
+    ],
+    "pitfalls": [
+      {
+        "type": "markdown",
+        "content": "Không lấy diện tích hình chữ nhật 4 × 4 cho toàn khoảng."
+      }
+    ]
+  },
+  {
+    "questionId": "Q008",
+    "correctChoice": "B",
+    "explanation": [
+      {
+        "type": "markdown",
+        "content": "$mgh=\\frac12mv^2$ nên $v=\\sqrt{2gh}=\\sqrt{4}=2\\,\\mathrm{m/s}$."
+      }
+    ],
+    "shortcut": [
+      {
+        "type": "markdown",
+        "content": "Kiểm tra điều kiện của mô hình trước khi thay số."
+      }
+    ],
+    "pitfalls": [
+      {
+        "type": "markdown",
+        "content": "Giữ nhất quán đơn vị SI và dấu của các đại lượng."
+      }
+    ]
+  },
+  {
+    "questionId": "Q009",
+    "correctChoice": "A",
+    "explanation": [
+      {
+        "type": "markdown",
+        "content": "Đường sức đi ra khỏi điện tích dương và đi vào điện tích âm. Với một điện tích điểm đơn lẻ, các đường sức có tính đối xứng cầu."
+      }
+    ],
+    "shortcut": [
+      {
+        "type": "markdown",
+        "content": "Kiểm tra điều kiện của mô hình trước khi thay số."
+      }
+    ],
+    "pitfalls": [
+      {
+        "type": "markdown",
+        "content": "Giữ nhất quán đơn vị SI và dấu của các đại lượng."
+      }
+    ]
+  },
+  {
+    "questionId": "Q010",
+    "correctChoice": "C",
+    "explanation": [
+      {
+        "type": "markdown",
+        "content": "Từ bảo toàn năng lượng:\n\n$$\\frac12 kA^2=\\frac12kx^2+\\frac12mv^2,\\qquad |v|=\\omega\\sqrt{A^2-x^2}.$$\n\nỞ $x=0$, độ lớn vận tốc đạt $\\omega A$.\n\n| Vị trí | Tốc độ | Độ lớn gia tốc |\n| :--- | :--- | :--- |\n| Cân bằng | $\\omega A$ | $0$ |\n| Biên | $0$ | $\\omega^2 A$ |\n\n1. Xác định vị trí được hỏi.\n2. Dùng $a=-\\omega^2 x$ để kiểm tra gia tốc.\n3. Phân biệt vận tốc có dấu với tốc độ.\n\n**Kiểm tra thứ nguyên:** $\\omega A$ có đơn vị $\\mathrm{m/s}$.\n\n$$\\int_0^T v(t)\\,dt=0,\\qquad T=\\frac{2\\pi}{\\omega}.$$"
+      }
+    ],
+    "shortcut": [
+      {
+        "type": "markdown",
+        "content": "Ở cân bằng: thế năng cực tiểu, động năng cực đại."
+      }
+    ],
+    "pitfalls": [
+      {
+        "type": "markdown",
+        "content": "Lực và gia tốc cực đại ở biên, không phải tại vị trí cân bằng."
+      }
+    ]
+  }
+]

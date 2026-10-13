@@ -1,0 +1,562 @@
+[
+  {
+    "id": "Q001",
+    "section": "physics-1",
+    "topic": "Động năng",
+    "tags": [
+      "validation"
+    ],
+    "stem": [
+      {
+        "type": "markdown",
+        "content": "Một vật khối lượng $m=2\\,\\mathrm{kg}$ chuyển động với tốc độ $v=3\\,\\mathrm{m/s}$. **Động năng** của vật bằng bao nhiêu? Chú ý các dấu tiếng Việt: Nguyễn, chuyển động, ngưỡng, trường, quỹ đạo."
+      }
+    ],
+    "choices": [
+      {
+        "key": "A",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$3\\,\\mathrm{J}$"
+          }
+        ]
+      },
+      {
+        "key": "B",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$9\\,\\mathrm{J}$"
+          }
+        ]
+      },
+      {
+        "key": "C",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$6\\,\\mathrm{J}$"
+          }
+        ]
+      },
+      {
+        "key": "D",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$18\\,\\mathrm{J}$"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Q002",
+    "section": "physics-1",
+    "topic": "Điện dung",
+    "tags": [
+      "validation"
+    ],
+    "stem": [
+      {
+        "type": "markdown",
+        "content": "Tụ điện đã tích điện rồi **ngắt khỏi nguồn**. Khoảng cách hai bản tăng gấp đôi. Năng lượng điện trường thay đổi thế nào? $C=\\varepsilon_0 S/d$ và $U=Q^2/(2C)$."
+      }
+    ],
+    "choices": [
+      {
+        "key": "A",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "Giảm một nửa"
+          }
+        ]
+      },
+      {
+        "key": "B",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "Không đổi"
+          }
+        ]
+      },
+      {
+        "key": "C",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "Tăng gấp đôi"
+          }
+        ]
+      },
+      {
+        "key": "D",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "Tăng gấp bốn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Q003",
+    "section": "physics-1",
+    "topic": "Định luật Gauss",
+    "tags": [
+      "validation"
+    ],
+    "stem": [
+      {
+        "type": "markdown",
+        "content": "Một mặt kín bao quanh điện tích $Q$. Thông lượng điện trường qua mặt kín bằng bao nhiêu?\n\n$$\n\\Phi_E=\\oint_S\\mathbf E\\cdot d\\mathbf S\n$$"
+      }
+    ],
+    "choices": [
+      {
+        "key": "A",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$0$"
+          }
+        ]
+      },
+      {
+        "key": "B",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$Q/\\varepsilon_0$"
+          }
+        ]
+      },
+      {
+        "key": "C",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$Q\\varepsilon_0$"
+          }
+        ]
+      },
+      {
+        "key": "D",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$Q/(4\\pi\\varepsilon_0)$"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Q004",
+    "section": "physics-1",
+    "topic": "Chồng chất điện trường",
+    "tags": [
+      "validation"
+    ],
+    "stem": [
+      {
+        "type": "markdown",
+        "content": "Tám điện tích bằng nhau đặt ở tám đỉnh của một hình lập phương. Điện trường ở tâm là bao nhiêu? Với $\\mathbf r_i$ hướng từ điện tích thứ $i$ tới tâm:\n\n$$\n\\mathbf E=\\frac{kq_{1}\\mathbf r_{1}}{|\\mathbf r_{1}|^3}+\\frac{kq_{2}\\mathbf r_{2}}{|\\mathbf r_{2}|^3}+\\frac{kq_{3}\\mathbf r_{3}}{|\\mathbf r_{3}|^3}+\\frac{kq_{4}\\mathbf r_{4}}{|\\mathbf r_{4}|^3}+\\frac{kq_{5}\\mathbf r_{5}}{|\\mathbf r_{5}|^3}+\\frac{kq_{6}\\mathbf r_{6}}{|\\mathbf r_{6}|^3}+\\frac{kq_{7}\\mathbf r_{7}}{|\\mathbf r_{7}|^3}+\\frac{kq_{8}\\mathbf r_{8}}{|\\mathbf r_{8}|^3}=\\sum_{i=1}^{8}\\frac{kq_i\\mathbf r_i}{|\\mathbf r_i|^3}\n$$"
+      }
+    ],
+    "choices": [
+      {
+        "key": "A",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$\\mathbf 0$"
+          }
+        ]
+      },
+      {
+        "key": "B",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$8kq/a^2$"
+          }
+        ]
+      },
+      {
+        "key": "C",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$4kq/a^2$"
+          }
+        ]
+      },
+      {
+        "key": "D",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$2kq/a^2$"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Q005",
+    "section": "physics-1",
+    "topic": "Vectơ và ma trận",
+    "tags": [
+      "validation"
+    ],
+    "stem": [
+      {
+        "type": "markdown",
+        "content": "Phép quay góc $90^\\circ$ trong mặt phẳng có ma trận dưới đây. Vectơ $(1,0)$ biến thành vectơ nào?\n\n$$\nR=\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix},\\qquad f(x)=\\begin{cases}x^2&x\\ge0\\\\-x&x<0\\end{cases}\n$$"
+      }
+    ],
+    "choices": [
+      {
+        "key": "A",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$(1,0)$"
+          }
+        ]
+      },
+      {
+        "key": "B",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$(0,-1)$"
+          }
+        ]
+      },
+      {
+        "key": "C",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$(0,1)$"
+          }
+        ]
+      },
+      {
+        "key": "D",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$(-1,0)$"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Q006",
+    "section": "physics-2",
+    "topic": "Mạch điện",
+    "tags": [
+      "validation"
+    ],
+    "stem": [
+      {
+        "type": "markdown",
+        "content": "Hai điện trở nối tiếp theo hình. Bỏ qua điện trở nguồn. Cường độ dòng điện trong mạch bằng bao nhiêu?"
+      },
+      {
+        "type": "image",
+        "src": "assets/circuit.svg",
+        "alt": "Mạch nối tiếp gồm điện trở 2 ôm, 4 ôm và nguồn 12 vôn",
+        "caption": "Sơ đồ mạch điện một vòng."
+      }
+    ],
+    "choices": [
+      {
+        "key": "A",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$2\\,\\mathrm{A}$"
+          }
+        ]
+      },
+      {
+        "key": "B",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$3\\,\\mathrm{A}$"
+          }
+        ]
+      },
+      {
+        "key": "C",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$6\\,\\mathrm{A}$"
+          }
+        ]
+      },
+      {
+        "key": "D",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$0.5\\,\\mathrm{A}$"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Q007",
+    "section": "physics-2",
+    "topic": "Động học",
+    "tags": [
+      "validation"
+    ],
+    "stem": [
+      {
+        "type": "markdown",
+        "content": "Đồ thị vận tốc theo thời gian cho dưới đây. Độ dời trong khoảng từ $t=0$ đến $t=4\\,\\mathrm{s}$ bằng bao nhiêu?"
+      },
+      {
+        "type": "image",
+        "src": "assets/velocity.png",
+        "alt": "Đồ thị vận tốc tăng tuyến tính từ 0 đến 4 mét trên giây trong 2 giây rồi không đổi đến giây thứ 4",
+        "caption": "Trục đứng: v (m/s); trục ngang: t (s)."
+      }
+    ],
+    "choices": [
+      {
+        "key": "A",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$8\\,\\mathrm{m}$"
+          }
+        ]
+      },
+      {
+        "key": "B",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$12\\,\\mathrm{m}$"
+          }
+        ]
+      },
+      {
+        "key": "C",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$16\\,\\mathrm{m}$"
+          }
+        ]
+      },
+      {
+        "key": "D",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$4\\,\\mathrm{m}$"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Q008",
+    "section": "physics-2",
+    "topic": "Bảo toàn cơ năng",
+    "tags": [
+      "validation"
+    ],
+    "stem": [
+      {
+        "type": "markdown",
+        "content": "Con lắc được thả từ trạng thái nghỉ ở độ cao $h=0.20\\,\\mathrm{m}$ so với vị trí thấp nhất. Bỏ qua ma sát."
+      },
+      {
+        "type": "image",
+        "src": "assets/pendulum.svg",
+        "alt": "Con lắc ở độ cao h so với vị trí thấp nhất",
+        "caption": ""
+      },
+      {
+        "type": "markdown",
+        "content": "Lấy $g=10\\,\\mathrm{m/s^2}$. Đồ thị bên dưới nhắc lại quan hệ tuyến tính giữa thế năng và độ cao."
+      },
+      {
+        "type": "image",
+        "src": "assets/energy.webp",
+        "alt": "Đồ thị thế năng U bằng mgh theo độ cao h",
+        "caption": "Hình WebP minh họa quan hệ tuyến tính; không dùng tỉ lệ để đo."
+      },
+      {
+        "type": "markdown",
+        "content": "Tốc độ tại vị trí thấp nhất bằng bao nhiêu?"
+      }
+    ],
+    "choices": [
+      {
+        "key": "A",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$1\\,\\mathrm{m/s}$"
+          }
+        ]
+      },
+      {
+        "key": "B",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$2\\,\\mathrm{m/s}$"
+          }
+        ]
+      },
+      {
+        "key": "C",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$4\\,\\mathrm{m/s}$"
+          }
+        ]
+      },
+      {
+        "key": "D",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "$0.2\\,\\mathrm{m/s}$"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Q009",
+    "section": "physics-2",
+    "topic": "Đường sức điện",
+    "tags": [
+      "validation"
+    ],
+    "stem": [
+      {
+        "type": "markdown",
+        "content": "Hình nào biểu diễn đúng chiều đường sức của một điện tích điểm **dương** đứng riêng lẻ?"
+      }
+    ],
+    "choices": [
+      {
+        "key": "A",
+        "content": [
+          {
+            "type": "image",
+            "src": "assets/field-out.svg",
+            "alt": "Các đường sức hướng ra xa điện tích dương",
+            "caption": ""
+          }
+        ]
+      },
+      {
+        "key": "B",
+        "content": [
+          {
+            "type": "image",
+            "src": "assets/field-in.svg",
+            "alt": "Các đường sức hướng vào điện tích dương",
+            "caption": ""
+          }
+        ]
+      },
+      {
+        "key": "C",
+        "content": [
+          {
+            "type": "image",
+            "src": "assets/field-zero.svg",
+            "alt": "Không có đường sức",
+            "caption": ""
+          }
+        ]
+      },
+      {
+        "key": "D",
+        "content": [
+          {
+            "type": "image",
+            "src": "assets/field-parallel.svg",
+            "alt": "Các đường sức song song cùng chiều",
+            "caption": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Q010",
+    "section": "physics-2",
+    "topic": "Dao động điều hòa",
+    "tags": [
+      "validation"
+    ],
+    "stem": [
+      {
+        "type": "markdown",
+        "content": "Vật dao động điều hòa có $x=A\\cos(\\omega t+\\varphi)$. Ở vị trí cân bằng, đại lượng nào đạt độ lớn cực đại?"
+      }
+    ],
+    "choices": [
+      {
+        "key": "A",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "Gia tốc"
+          }
+        ]
+      },
+      {
+        "key": "B",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "Li độ"
+          }
+        ]
+      },
+      {
+        "key": "C",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "Vận tốc"
+          }
+        ]
+      },
+      {
+        "key": "D",
+        "content": [
+          {
+            "type": "markdown",
+            "content": "Lực kéo về"
+          }
+        ]
+      }
+    ]
+  }
+]
